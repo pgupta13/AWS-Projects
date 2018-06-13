@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<body bgcolor="#B0C4DE"></body>
+	<div><a href="welcomepageH4.xhtml">Home</a>
+		<br/><br/>
+		</div>
+
+
+		<h:form>
+			<p:panelGrid columns="2" />
+			<p:outputLabel>First Name</p:outputLabel>
+			<p:inputText id="firstnameinput" value="#{searchBean.firstname}"
+				requiredMessage="Please enter your firstname"
+				validatorMessage="Enter only alphabetical text">
+				<f:validateLength maximum="15" />
+			</p:inputText>
+			<p:message for="firstnameinput" class="error" />
+			
+			<br/>
+			<p:outputLabel>Last Name</p:outputLabel>
+			<p:inputText id="lastnameinput" value="#{searchBean.lastname}"
+				requiredMessage="Please enter your Lastname"
+				validatorMessage="Enter only alphabetical text">
+			</p:inputText>
+			<p:message for="lastnameinput" class="error" />
+			
+			<br/>
+			<p:outputLabel>City</p:outputLabel>
+			<p:inputText id="city" value="#{searchBean.city}"
+				requiredMessage="Please enter your city"
+				validatorMessage="Enter only alphabetical text">
+			</p:inputText>
+			<p:message for="city" class="error" />
+			<br/>
+			<p:outputLabel>State</p:outputLabel>
+			<p:inputText id="state" value="#{searchBean.state}"
+				requiredMessage="Please enter your state"
+				validatorMessage="Enter only alphabetical text">
+			</p:inputText>
+			<p:message for="state" class="error" />
+			<br/>
+
+			<h:commandButton value="Search" type="submit"
+				action="#{searchBean.searchSurvey}" />
+			<h:button value="Cancel" />
+
+
+		</h:form>
+
+</h:body>
+</html>
